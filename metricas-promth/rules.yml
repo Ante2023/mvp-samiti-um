@@ -8,11 +8,11 @@ groups:
           monitoring_group: "service-up"
           severity: critical
         annotations:
-          sumary: "El servidor Flask, a dejado de servir recursos"
-          description: "El servidor Flask no a reportado valor de metríca up = 1 "
+          sumary: "El servidor Flask, ha dejado de servir recursos"
+          description: "El servidor Flask no ha reportado valor de métrica up = 1"
 
       - alert: "alert_flaskapp_request" 
-        expr: rate(app_request_latency_seconds_count[1m])>50 
+        expr: rate(app_request_latency_seconds_count[1m])>50   
         for: 5s 
         labels:
           monitoring_group: "http-request-endpoint"

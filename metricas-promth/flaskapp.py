@@ -16,12 +16,12 @@ REQUEST_LATENCY = Histogram(
     'Application Request Latency',
     ['method', 'endpoint']
 )
-@app.route('/test-ventas')
+@app.route('/ventas')
 def test_ventas():
     start_time = time.time()
-    REQUEST_COUNT.labels('GET', '/test-ventas', 200).inc()
+    REQUEST_COUNT.labels('GET', '/ventas', 200).inc()
     response = jsonify(message='Hello, world!')
-    REQUEST_LATENCY.labels('GET', '/test-ventas').observe(time.time() - start_time)
+    REQUEST_LATENCY.labels('GET', '/ventas').observe(time.time() - start_time)
     return response
 
 if __name__ == '__main__':

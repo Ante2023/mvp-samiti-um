@@ -1,6 +1,6 @@
 volumes:
   metrics-prometheus:
-  dashboards-grafana:
+  # dashboards-grafana:
 
 services:
 
